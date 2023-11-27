@@ -23,15 +23,17 @@ const slides = [
 ];
 
 console.log(slides);
+console.log(slides[3].title);
 
 const { createApp } = Vue;
 
   createApp({
     data() {
       return {
-        immagine: slides.map(slide => slide.image),
-        titolo: slides.map(slide => slide.title),
-        testo: slides.map(slide => slide.text),
+        // immagine: slides.map(slide => slide.image),
+        // titolo: slides.map(slide => slide.title),
+        // testo: slides.map(slide => slide.text),
+        slides: slides,
       }
     },
   }).mount('#app');
