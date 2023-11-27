@@ -48,7 +48,7 @@ const { createApp } = Vue;
             this.currentIndex = indice;
         },
         intervallo() {
-            this.intervallo = setInterval(() => {
+            intervallo = setInterval(() => {
                 this.next();
             }, 3000);
         },
