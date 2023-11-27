@@ -31,14 +31,23 @@ const { createApp } = Vue;
     data() {
       return {
         slides: slides,
-      }
+        currentIndex: 0,
+      };
     },
     methods: {
         prev(){
             console.log('ho cliccato prev');
+            this.currentIndex--;
+            if (this.currentIndex < 0){
+                this.currentIndex = this.slides.length - 1;
+            }
         },
         next(){
             console.log('ho cliccato next');
+            this.currentIndex++;
+            if (this.currentIndex > this.slides.length - 1){
+                this.currentIndex = 0;
+            }
         },
     }
   }).mount('#app');
