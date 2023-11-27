@@ -11,6 +11,10 @@
     align-items: center;
 }
 
+.slider-wrapper {
+    display: flex;
+}
+
 .item {
     float: left;
     width: 700px;
@@ -34,6 +38,7 @@
 
 .thumbs {
     float: left;
+    width: 300px;
     height: 300px;
     background: #000;
     position: relative;
