@@ -47,5 +47,13 @@ const { createApp } = Vue;
         changeImage(indice){
             this.currentIndex = indice;
         },
+        intervallo() {
+            this.intervallo = setInterval(() => {
+                this.next();
+            }, 3000);
+        },
+    },
+    mounted() {
+        this.intervallo();
     }
   }).mount('#app');
