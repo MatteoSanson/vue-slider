@@ -1,3 +1,5 @@
+'use strict';
+
 const slides = [
     {
         image: 'img/01.webp',
@@ -29,6 +31,7 @@ const { createApp } = Vue;
       return {
         slides: slides,
         currentIndex: 0,
+        intervalStatus: null,
       };
     },
     methods: {
@@ -47,13 +50,19 @@ const { createApp } = Vue;
         changeImage(indice){
             this.currentIndex = indice;
         },
-        intervallo() {
-            intervallo = setInterval(() => {
-                this.next();
-            }, 3000);
+        startInterval() {
+            this.intervalStatus = setInterval(() => {
+              this.next();
+              console.log('start', this.intervalStatus);
+            }, 3_000);
+            // console.log('start', this.intervalStatus);
+        },
+        stopInterval() {
+            clearInterval(this.intervalStatus);
+            console.log('stop', this.intervalStatus);
         },
     },
     mounted() {
-        this.intervallo();
+        this.startInterval();
     }
   }).mount('#app');
